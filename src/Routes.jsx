@@ -3,12 +3,13 @@ import { BrowserRouter, Routes as RouterRoutes, Route } from "react-router-dom";
 import ScrollToTop from "components/ScrollToTop";
 import ErrorBoundary from "components/ErrorBoundary";
 import NotFound from "pages/NotFound";
+import LoginScreen from './pages/login-screen';
 import AdminDashboard from './pages/admin-dashboard';
-import MenuAndOrdering from './pages/menu-and-ordering';
-import LoginPage from './pages/login';
-import TableReservation from './pages/table-reservation';
-import OrderTracking from './pages/order-tracking';
-import Register from './pages/register';
+import CustomerRegistration from './pages/customer-registration';
+import MenuAndFoodOrdering from './pages/menu-and-food-ordering';
+import TableReservationSystem from './pages/table-reservation-system';
+import OrderTrackingDashboard from './pages/order-tracking-dashboard';
+import WaiterDashboard from './pages/waiter-dashboard';
 
 const Routes = () => {
   return (
@@ -17,13 +18,14 @@ const Routes = () => {
       <ScrollToTop />
       <RouterRoutes>
         {/* Define your route here */}
-        <Route path="/" element={<AdminDashboard />} />
+        <Route path="/" element={<LoginScreen />} />
+        <Route path="/login-screen" element={<LoginScreen />} />
         <Route path="/admin-dashboard" element={<AdminDashboard />} />
-        <Route path="/menu-and-ordering" element={<MenuAndOrdering />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/table-reservation" element={<TableReservation />} />
-        <Route path="/order-tracking" element={<OrderTracking />} />
-        <Route path="/register" element={<Register />} />
+        <Route path="/customer-registration" element={<CustomerRegistration />} />
+        <Route path="/menu-and-food-ordering" element={<MenuAndFoodOrdering />} />
+        <Route path="/table-reservation-system" element={<TableReservationSystem />} />
+        <Route path="/order-tracking-dashboard" element={<OrderTrackingDashboard />} />
+        <Route path="/waiter-dashboard" element={<WaiterDashboard />} />
         <Route path="*" element={<NotFound />} />
       </RouterRoutes>
       </ErrorBoundary>
